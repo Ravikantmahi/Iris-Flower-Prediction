@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Flower Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        h2 {
+            color: #343a40;
+            font-weight: 700;
+        }
+        .form-label {
+            font-weight: 500;
+        }
+        .btn-primary {
+            background-color: #2575fc;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #1a5ed6;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        .flower-image {
+            max-height: 300px;
+            object-fit: contain;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h2 class="mb-4">🌸 Iris Flower Predictor</h2>
+        <form action="/irisf" method="POST">
+            <div class="mb-3 text-start">
+                <label for="swidth" class="form-label">Sepal Width (cm)</label>
+                <input type="number" step="any" class="form-control" name="swidth" placeholder="e.g. 3.5" required>
+            </div>
+            <div class="mb-3 text-start">
+                <label for="sheight" class="form-label">Sepal Height (cm)</label>
+                <input type="number" step="any" class="form-control" name="sheight" placeholder="e.g. 5.1" required>
+            </div>
+            <div class="mb-3 text-start">
+                <label for="pwidth" class="form-label">Petal Width (cm)</label>
+                <input type="number" step="any" class="form-control" name="pwidth" placeholder="e.g. 1.4" required>
+            </div>
+            <div class="mb-3 text-start">
+                <label for="pheight" class="form-label">Petal Height (cm)</label>
+                <input type="number" step="any" class="form-control" name="pheight" placeholder="e.g. 0.2" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">🌼 Predict Flower Type</button>
+            <button type="reset" class="btn btn-secondary w-100 mt-2">🔄 Clear</button>
+        </form>
+
+        {% if data %}
+        <div class="mt-4">
+            <h4>🌿 Predicted Flower:</h4>
+            <h3 class="text-success">{{ data }}</h3>
+
+            {% if data == "Iris-setosa" %}
+                <img src="https://cdn.glitch.global/8599b2d2-58ab-4d42-98f5-97fa4c6bad04/Iris%20Setosa.png?v=1680866840563" class="img-fluid flower-image rounded" alt="Iris Setosa">
+            {% elif data == "Iris-versicolor" %}
+                <img src="https://cdn.glitch.global/8599b2d2-58ab-4d42-98f5-97fa4c6bad04/Iris%20versicolor.png?v=1680866854461" class="img-fluid flower-image rounded" alt="Iris Versicolor">
+            {% elif data == "Iris-virginica" %}
+                <img src="https://cdn.glitch.global/8599b2d2-58ab-4d42-98f5-97fa4c6bad04/Iris%20Virginica.png?v=1680866857022" class="img-fluid flower-image rounded" alt="Iris Virginica">
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
