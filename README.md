@@ -27,7 +27,6 @@ This is a simple **Flask-based machine learning web app** that predicts the **sp
 
 ---
 
-
 ---
 
 Made with ❤️ by Ravi Kant
