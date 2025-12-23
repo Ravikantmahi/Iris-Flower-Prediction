@@ -33,8 +33,9 @@ Made with ❤️ by Ravi Kant
 🔗 Visit Portfolio
 ## 👨‍💻 Author
 
-**Ravi Kant**  
+**Ravi Kant**
 
+🔗 [**Linkdln**](https://www.linkedin.com/in/ravikantmahi/)  
 🔗 [**Portfolio Website**](https://ravikantportfolio.vercel.app)  
 🐙 [**GitHub Profile**](https://github.com/Ravikantmahi)
 > 🚀 Passionate about building intelligent web apps and solving real-world problems with data and code.
